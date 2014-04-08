@@ -1,0 +1,11 @@
+This is a git service to help you checkout git repository and checkout branches
+or tags based on supplied name. Branch has precedence over tag, If branch is not
+found it checks for tag. In case none is found falls back to master. It cleans up 
+the repo after you have performed operations on the repo. So it can be used to checkout 
+repos to be processed and then reset any changes so multiple versions or operations can be done
+based on requirement on the base source.
+
+It use CommandService and LogService to achieve all of it that can be found in the following links 
+
+CommandService https://github.com/ahsandar/command-service.git
+LogService git@gitlab.com:ahsan.dar/log-service.git
