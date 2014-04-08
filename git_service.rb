@@ -7,7 +7,7 @@ class GitService
   attr_reader :remote_repository_path, :local_repository_path, :scm_branch_name
   attr_accessor :log
 
-  SCM_REPO = 'git@lxappsvn01:mobile/PDFReader.git'
+  SCM_REPO = 'https://github.com/ahsandar/command-service.git'
 
   def initialize(options={})
     defaults = {:local_repository_root_path => LOCAL_REPO_PATH,
@@ -64,7 +64,7 @@ class GitService
       result = execute_git_command(options, remote_repository_path)
       yield result if block_given?
     rescue Exception => e
-      log.msg "********** Exception in build process **********"
+      log.msg "********** Exception in Git process **********"
       log.msg "#{e.message}"
       log.msg "#{e.backtrace.join("\n")}"
       raise ScmServiceException.new "Cannot connect to git repository : #{remote_repository_path}"

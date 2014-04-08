@@ -4,7 +4,9 @@ found it checks for tag. In case none is found falls back to master. It cleans u
 the repo after you have performed operations on the repo. So it can be used to checkout 
 repos to be processed and then reset any changes so multiple versions or operations can be done
 based on requirement on the base source.
+It will checkout source only if itdoesn't finds the a copy already otherwise only pulls changes.
 
+ 
 It use CommandService and LogService to achieve all of it that can be found in the following links 
 
 CommandService https://github.com/ahsandar/command-service.git
